@@ -1,0 +1,37 @@
+{
+    "data": {
+      "root": "data/daphnet/processed",
+      "masking_ratio": 0.5,
+      "window_length": 128,
+      "overlap": true,
+      "segments": 10,
+      "batch_size": 128,
+      "features": 9
+    },
+    "training": {
+      "work_dir": "experiments/daphnet",
+      "masking_ratio": 0.7,
+      "lr": 1.0e-3,
+      "epochs": 100
+    },
+    "networks": {
+      "time_embedding": 128,
+      "feature_embedding": 16,
+      "masking_strategy": "random"
+    },
+    "diffusion": {
+      "layers": 4,
+      "channels": 64,
+      "num_heads": 8,
+      "embedding_dim": 128,
+      "beta_start": 0.0001,
+      "beta_end": 0.5,
+      "num_steps": 1000,
+      "scheduler": "quad"
+    },
+    "etc": {
+      "device": "cuda:0",
+      "seed": 42
+    }
+  }
+  
